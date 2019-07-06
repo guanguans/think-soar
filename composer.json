@@ -7,7 +7,7 @@
         "think",
         "debug"
     ],
-    "description": "SQL optimizer and rewriter extension package for thinkphp5 framework",
+    "description": "SQL optimizer and rewriter extension package for thinkphp5 framework.",
     "support": {
         "issues": "https://github.com/guanguans/soar-php/issues",
         "source": "https://github.com/guanguans/soar-php"
