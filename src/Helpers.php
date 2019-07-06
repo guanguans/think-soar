@@ -111,15 +111,15 @@ if (!function_exists('soar_pretty')) {
 
 if (!function_exists('soar_md2html')) {
     /**
-     * @param null $sql
+     * @param $markdown
      *
      * @return string|null
      *
      * @throws \Guanguans\SoarPHP\Exceptions\InvalidArgumentException
      */
-    function soar_md2html($sql = null)
+    function soar_md2html($markdown)
     {
-        return null === $sql ? soar()->md2html(Db::getLastSql()) : soar()->md2html($sql);
+        return  soar()->md2html($markdown);
     }
 }
 
