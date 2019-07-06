@@ -1,0 +1,17 @@
+{
+    "name": "guanguans/think-soar",
+    "description": "debug sql tool",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "琯琯",
+            "email": "yzmguanguan@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Guanguans\\ThinkSoar\\": "src"
+        }
+    }
+}
