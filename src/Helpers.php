@@ -8,6 +8,7 @@
  * This source file is subject to the MIT license that is bundled.
  */
 
+use Guanguans\ThinkSoar\Exceptions\InvalidConfigException;
 use Guanguans\ThinkSoar\Facade;
 use Guanguans\ThinkSoar\Soar;
 use think\Db;
@@ -15,10 +16,16 @@ use think\facade\Config;
 
 if (!function_exists('soar')) {
     /**
-     * @return \Guanguans\ThinkSoar\Soar
+     * @return mixed
+     *
+     * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException
      */
     function soar()
     {
+        if (!Config::get('app.app_debug') || !Config::get('app.app_trace')) {
+            throw new InvalidConfigException(sprintf('Config must be true :[%s/%s]', 'app_debug', 'app_trace'));
+        }
+
         return Facade::make(Soar::class, [Config::get('soar.')]);
     }
 }
