@@ -8,15 +8,21 @@
  * This source file is subject to the MIT license that is bundled.
  */
 
+use Guanguans\ThinkSoar\Behaviors\AppEnd;
+use Guanguans\ThinkSoar\Behaviors\AppInit;
 use Guanguans\ThinkSoar\Exceptions\InvalidConfigException;
 use Guanguans\ThinkSoar\Facade;
 use Guanguans\ThinkSoar\Soar;
 use think\Db;
 use think\facade\Config;
+use think\facade\Hook;
+
+Hook::add('app_init', AppInit::class);
+Hook::add('app_end', AppEnd::class);
 
 if (!function_exists('soar')) {
     /**
-     * @return mixed
+     * @return object
      *
      * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException
      */
@@ -34,9 +40,9 @@ if (!function_exists('soar_score')) {
     /**
      * @param null $sql
      *
-     * @return string|null
+     * @return mixed
      *
-     * @throws \Guanguans\SoarPHP\Exceptions\InvalidArgumentException
+     * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException
      */
     function soar_score($sql = null)
     {

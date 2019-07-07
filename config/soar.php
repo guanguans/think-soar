@@ -30,7 +30,7 @@ return [
         'disable'  => false,
     ],
     // 日志输出文件
-    '-log-output'  => './soar.log',
+    '-log-output'  => env('SOAR_LOG_FILE', app()->getRuntimePath()."log/soar.log"),
     // 日志级别: [0=>Emergency, 1=>Alert, 2=>Critical, 3=>Error, 4=>Warning, 5=>Notice, 6=>Informational, 7=>Debug]
     '-log-level'   => 7,
     // 报告输出格式: [markdown, html, json]
