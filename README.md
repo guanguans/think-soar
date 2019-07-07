@@ -4,7 +4,13 @@
 
 > 适用于 thinkphp5 SQL 语句优化器扩展包，基于 **[guanguans/soar-php](https://github.com/guanguans/soar-php)**
 
+[![Build Status](https://travis-ci.org/guanguans/think-soar.svg?branch=master)](https://travis-ci.org/guanguans/think-soar)
+[![Build Status](https://scrutinizer-ci.com/g/guanguans/think-soar/badges/build.png?b=master)](https://scrutinizer-ci.com/g/guanguans/think-soar/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/guanguans/think-soar/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/guanguans/think-soar/?branch=master)
 [![StyleCI](https://github.styleci.io/repos/195521139/shield?branch=master)](https://github.styleci.io/repos/195521139)
+[![Latest Stable Version](https://poser.pugx.org/guanguans/think-soar/v/stable)](https://packagist.org/packages/guanguans/think-soar)
+[![Total Downloads](https://poser.pugx.org/guanguans/think-soar/downloads)](https://packagist.org/packages/guanguans/think-soar)
+[![License](https://poser.pugx.org/guanguans/think-soar/license)](https://packagist.org/packages/guanguans/think-soar)
 
 ## 环境要求
 
