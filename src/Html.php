@@ -10,6 +10,7 @@
 
 namespace Guanguans\ThinkSoar;
 
+use Guanguans\ThinkSoar\Exceptions\Exception;
 use think\facade\Log;
 
 class Html
@@ -72,8 +73,8 @@ class Html
 
                 try {
                     $soars[$k]['htmlExplain'] = $soar->htmlExplain($sqlStr);
-                } catch (\Exception $e) {
-                    if (!function_exists('trace')) {
+                } catch (Exception $e) {
+                    if (function_exists('trace')) {
                         trace("EXPLAIN $sqlStr error: ".$e->getMessage());
                     }
                 }
