@@ -69,6 +69,7 @@ class Html
                 $soars[$k]['score'] = $soar->score($sqlStr);
                 preg_match_all('/<p>.*分<\/p>/u', $soar->score($sqlStr), $stars);
                 $soars[$k]['star'] = rtrim(ltrim($stars[0][0], '<p>'), '</p>');
+
                 try {
                     $soars[$k]['htmlExplain'] = $soar->htmlExplain($sqlStr);
                 } catch (\Exception $e) {
