@@ -9,3 +9,4 @@ phpunit.php export-ignore
 phpunit.xml.dist export-ignore
 phpunit.xml export-ignore
 .php_cs export-ignore
+*.tpl linguist-language=php
