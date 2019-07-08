@@ -2,6 +2,8 @@
 
 <p align="center">SQL 语句优化器和重写器</p>
 
+![](docs/usage.gif)
+
 > 适用于 thinkphp5 SQL 语句优化器扩展包，基于 **[guanguans/soar-php](https://github.com/guanguans/soar-php)**
 
 [![Build Status](https://travis-ci.org/guanguans/think-soar.svg?branch=master)](https://travis-ci.org/guanguans/think-soar)
@@ -14,7 +16,7 @@
 
 ## 环境要求
 
-* [topthink/framework 5](https://github.com/top-think/framework)
+* [topthink/framework >= 5.1](https://github.com/top-think/framework)
 
 ## 安装
 
@@ -38,7 +40,7 @@ $ wget https://github.com/XiaoMi/soar/releases/download/0.11.0/soar.windows-amd6
 
 ### 配置，更多详细配置请参考 [soar config](https://github.com/XiaoMi/soar/blob/master/doc/config.md)
 
-拷贝 `config\soar.php` 到 `thinkphp` 配置目录下，修改对应的配置即可。
+拷贝 `config\soar.php` 到 `thinkphp` 配置目录下，修改对应的配置，并设置 `thinkphp` 的 `app_debug`、`trace` 配置为 true 。
 
 ### SQL 评分
 
