@@ -10,23 +10,23 @@
 
 return [
     // soar 路径
-    '-soar-path'   => 'path/to/soar',
+    '-soar-path'   => env('SOAR_FILE', 'you_soar_path'),
     // 线上环境配置
     '-online-dsn'  => [
-        'host'     => '127.0.0.1',
-        'port'     => '3306',
-        'dbname'   => 'database',
-        'username' => 'selectuser',
-        'password' => '123456',
-        'disable'  => false,
+        'host'     => '',
+        'port'     => '',
+        'dbname'   => '',
+        'username' => '', // 线上数据库用户只需 select 权限
+        'password' => '',
+        'disable'  => true,
     ],
     // 测试环境配置
     '-test-dsn'    => [
-        'host'     => '127.0.0.1',
-        'port'     => '3306',
-        'dbname'   => 'database',
-        'username' => 'root',
-        'password' => '123456',
+        'host'     => config('database.hostname') ? config('database.hostname') : 'you_host',
+        'port'     => config('database.hostport') ? config('database.hostport') : 'you_port',
+        'dbname'   => config('database.database') ? config('database.database') : 'you_dbname',
+        'username' => config('database.username') ? config('database.username') : 'you_username',
+        'password' => config('database.password') ? config('database.password') : 'you_password',
         'disable'  => false,
     ],
     // 日志输出文件
@@ -34,5 +34,5 @@ return [
     // 日志级别: [0=>Emergency, 1=>Alert, 2=>Critical, 3=>Error, 4=>Warning, 5=>Notice, 6=>Informational, 7=>Debug]
     '-log-level'   => 7,
     // 报告输出格式: [markdown, html, json]
-    '-report-type' => 'html'
+    '-report-type' => 'html',
 ];
