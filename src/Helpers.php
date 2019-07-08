@@ -16,9 +16,11 @@ use Guanguans\ThinkSoar\Soar;
 use think\Db;
 use think\facade\Config;
 
-app('hook')->add('app_init', AppInit::class);
-if (Config::get('app.app_debug') && Config::get('app.app_trace')) {
-    $hook = app('hook')->add('app_end', AppEnd::class);
+if (function_exists('app')) {
+    \app('hook')->add('app_init', AppInit::class);
+    if (Config::get('app.app_debug') && Config::get('app.app_trace')) {
+        $hook = \app('hook')->add('app_end', AppEnd::class);
+    }
 }
 
 if (!function_exists('soar')) {
