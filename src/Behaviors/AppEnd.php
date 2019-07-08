@@ -10,18 +10,14 @@
 
 namespace Guanguans\ThinkSoar\Behaviors;
 
-use think\facade\Request;
-
 class AppEnd
 {
     public function run()
     {
-        if (0 === strpos(Request::header('accept'), 'application/json') || Request::isAjax()) {
-            exit;
-        }
-
-        $content = app('html')->getHtmlContent();
-        if (is_string($content)) {
+        if (
+            (true !== \request()->isAjax() || false === strpos(\request()->header('accept'), 'application/json'))
+            && is_string($content = app('html')->getHtmlContent())
+        ) {
             echo $content;
         }
     }

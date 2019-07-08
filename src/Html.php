@@ -10,7 +10,6 @@
 
 namespace Guanguans\ThinkSoar;
 
-use Guanguans\ThinkSoar\Exceptions\Exception;
 use think\facade\Log;
 
 class Html
@@ -44,7 +43,6 @@ class Html
     public function getHtmlContent()
     {
         $soars = $this->getSqlInfo();
-
         ob_start();
         include $this->getFile();
 
@@ -58,8 +56,11 @@ class Html
      */
     public function getSqlInfo()
     {
+        $sqls = array_key_exists('sql', Log::getLog()) ? Log::getLog('sql') : [];
+        if (empty($sqls)) {
+            return [];
+        }
         $soar = soar();
-        $sqls = Log::getLog('sql');
         $soars = [];
         foreach ($sqls as $k => $sql) {
             preg_match_all('/\[ SQL \]|\[\sRunTime:.*\s\]/', $sql, $arr);
@@ -73,10 +74,8 @@ class Html
 
                 try {
                     $soars[$k]['htmlExplain'] = $soar->htmlExplain($sqlStr);
-                } catch (Exception $e) {
-                    if (function_exists('trace')) {
-                        trace("EXPLAIN $sqlStr error: ".$e->getMessage());
-                    }
+                } catch (\Exception $e) {
+                    trace("EXPLAIN $sqlStr error: ".$e->getMessage());
                 }
             }
         }
