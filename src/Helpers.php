@@ -18,7 +18,9 @@ use think\facade\Config;
 use think\facade\Hook;
 
 Hook::add('app_init', AppInit::class);
-Hook::add('app_end', AppEnd::class);
+if (Config::get('app.app_debug') && Config::get('app.app_trace')) {
+    Hook::add('app_end', AppEnd::class);
+}
 
 if (!function_exists('soar')) {
     /**
