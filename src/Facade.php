@@ -14,6 +14,9 @@ use think\Facade as ThinkFacade;
 
 class Facade extends ThinkFacade
 {
+    /**
+     * @return string
+     */
     protected static function getFacadeClass()
     {
         return 'Facade';

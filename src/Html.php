@@ -37,6 +37,8 @@ class Html
 
     /**
      * @return false|string
+     *
+     * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException
      */
     public function getHtmlContent()
     {
@@ -50,21 +52,32 @@ class Html
 
     /**
      * @return array
+     *
+     * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException
      */
     public function getSqlInfo()
     {
+        $soar = soar();
         $sqls = Log::getLog('sql');
-        foreach ($sqls as &$sql) {
+        $soars = [];
+        foreach ($sqls as $k => $sql) {
             preg_match_all('/\[ SQL \]|\[\sRunTime:.*\s\]/', $sql, $arr);
             if (!empty($arr[0])) {
                 $sqlStr = preg_replace('/\[ SQL \]|\[\sRunTime:.*\s\]/', '', $sql);
-                array_push($arr[0], $sqlStr);
-                $sql = $arr[0][2];
+                $soars[$k]['sql'] = $sqlStr;
+                $soars[$k]['run_time'] = $arr[0][1];
+                $soars[$k]['score'] = $soar->score($sqlStr);
+                preg_match_all('/<p>.*分<\/p>/u', $soar->score($sqlStr), $stars);
+                $soars[$k]['star'] = rtrim(ltrim($stars[0][0], '<p>'), '</p>');
+                try {
+                    $soars[$k]['htmlExplain'] = $soar->htmlExplain($sqlStr);
+                } catch (\Exception $e) {
+                    if (!function_exists('trace')) {
+                        trace("EXPLAIN $sqlStr error: ".$e->getMessage());
+                    }
+                }
             }
         }
-        unset($sql);
-        $soars = [];
-        $soars['Soar'] = isset($sqls) ? $sqls : '';
 
         return $soars;
     }

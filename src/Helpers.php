@@ -54,10 +54,9 @@ if (!function_exists('soar_md_explain')) {
     /**
      * @param null $sql
      *
-     * @return string|null
+     * @return mixed
      *
-     * @throws \Guanguans\SoarPHP\Exceptions\InvalidArgumentException
-     * @throws \Guanguans\SoarPHP\Exceptions\InvalidConfigException
+     * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException
      */
     function soar_md_explain($sql = null)
     {
@@ -69,10 +68,9 @@ if (!function_exists('soar_html_explain')) {
     /**
      * @param null $sql
      *
-     * @return string|null
+     * @return mixed
      *
-     * @throws \Guanguans\SoarPHP\Exceptions\InvalidArgumentException
-     * @throws \Guanguans\SoarPHP\Exceptions\InvalidConfigException
+     * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException\
      */
     function soar_html_explain($sql = null)
     {
@@ -84,9 +82,9 @@ if (!function_exists('soar_syntax_check')) {
     /**
      * @param null $sql
      *
-     * @return string|null
+     * @return mixed
      *
-     * @throws \Guanguans\SoarPHP\Exceptions\InvalidArgumentException
+     * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException
      */
     function soar_syntax_check($sql = null)
     {
@@ -98,9 +96,9 @@ if (!function_exists('soar_finger_print')) {
     /**
      * @param null $sql
      *
-     * @return string|null
+     * @return mixed
      *
-     * @throws \Guanguans\SoarPHP\Exceptions\InvalidArgumentException
+     * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException
      */
     function soar_finger_print($sql = null)
     {
@@ -112,9 +110,9 @@ if (!function_exists('soar_pretty')) {
     /**
      * @param null $sql
      *
-     * @return string|null
+     * @return mixed
      *
-     * @throws \Guanguans\SoarPHP\Exceptions\InvalidArgumentException
+     * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException
      */
     function soar_pretty($sql = null)
     {
@@ -126,9 +124,9 @@ if (!function_exists('soar_md2html')) {
     /**
      * @param $markdown
      *
-     * @return string|null
+     * @return mixed
      *
-     * @throws \Guanguans\SoarPHP\Exceptions\InvalidArgumentException
+     * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException
      */
     function soar_md2html($markdown)
     {
@@ -140,9 +138,9 @@ if (!function_exists('soar_exec')) {
     /**
      * @param $command
      *
-     * @return string|null
+     * @return mixed
      *
-     * @throws \Guanguans\SoarPHP\Exceptions\InvalidArgumentException
+     * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException
      */
     function soar_exec($command)
     {
@@ -152,9 +150,9 @@ if (!function_exists('soar_exec')) {
 
 if (!function_exists('soar_help')) {
     /**
-     * @return string|null
+     * @return mixed
      *
-     * @throws \Guanguans\SoarPHP\Exceptions\InvalidArgumentException
+     * @throws \Guanguans\ThinkSoar\Exceptions\InvalidConfigException
      */
     function soar_help()
     {
