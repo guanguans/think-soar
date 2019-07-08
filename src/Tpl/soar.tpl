@@ -1,9 +1,9 @@
 <div id="soar_page_trace" style="position:fixed;bottom:0;right:0;font-size:14px;width:100%;z-index: 999999;color: #000;text-align:left;font-family:'微软雅黑';">
-    <div id="soar_page_trace_tab" style="display: none;background:white;margin:0;height: 600px;">
+    <div id="soar_page_trace_tab" style="display: none;background:white;margin:0;height: 400px;">
         <div id="soar_page_trace_tab_tit" style="height:30px;padding: 6px 12px 0;border-bottom:1px solid #ececec;border-top:1px solid #ececec;font-size:16px">
             <span style="color:#000;padding-right:12px;height:30px;line-height:30px;display:inline-block;margin-right:3px;cursor:pointer;font-weight:700">Soar</span>
         </div>
-        <div id="soar_page_trace_tab_cont" style="overflow:auto;height:562px;padding:0;line-height: 24px">
+        <div id="soar_page_trace_tab_cont" style="overflow:auto;height:362px;padding:0;line-height: 24px">
             <div style="display:none;">
                 <?php foreach ($soars as $k => $val) {?>
                     <details>
@@ -28,6 +28,8 @@
     #soar_page_trace_tab_cont h3 {font-size:18px;}
     #soar_page_trace_tab_cont h4 {font-size:15px;}
     #soar_page_trace_tab_cont p {font-size:12px;}
+    body {margin:0px auto;width:100%;};
+    #soar_page_trace_tab_cont body {margin:20px auto;width:800px;background-color:#fff;font:13px "Myriad Pro","Lucida Grande",Lucida,Verdana,sans-serif}
 </style>
 <script type="text/javascript">
     (function(){
