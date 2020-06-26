@@ -9,8 +9,8 @@
     ],
     "description": "SQL optimizer and rewriter extension package for thinkphp5 framework.",
     "support": {
-        "issues": "https://github.com/guanguans/soar-php/issues",
-        "source": "https://github.com/guanguans/soar-php"
+        "issues": "https://github.com/guanguans/think-soar/issues",
+        "source": "https://github.com/guanguans/think-soar"
     },
     "type": "library",
     "license": "MIT",
