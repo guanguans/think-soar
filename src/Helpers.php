@@ -133,7 +133,7 @@ if (!function_exists('soar_md2html')) {
      */
     function soar_md2html($markdown)
     {
-        return  soar()->md2html($markdown);
+        return soar()->md2html($markdown);
     }
 }
 
