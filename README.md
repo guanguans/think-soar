@@ -1,5 +1,7 @@
 <h1 align="center">think-soar</h1>
 
+> ！本项目不再维护，如果有人愿意接手维护可以联系我。
+
 <p align="center">SQL 语句优化器和重写器</p>
 
 ![](docs/usage.gif)
